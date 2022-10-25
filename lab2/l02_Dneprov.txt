@@ -1,0 +1,196 @@
+Last login: Sun Sep 18 08:55:01 on ttys000
+stdneprov@MacBook-Pro-Steve ~ % mkdir my_lab
+stdneprov@MacBook-Pro-Steve ~ % pwd    
+/Users/stdneprov
+stdneprov@MacBook-Pro-Steve ~ % cd my_lab
+stdneprov@MacBook-Pro-Steve my_lab % pwd      
+/Users/stdneprov/my_lab
+stdneprov@MacBook-Pro-Steve my_lab % ls
+stdneprov@MacBook-Pro-Steve my_lab % cat > f1.txt
+Какой-то текст в первом файле
+^C
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f1.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat f1.txt 
+Какой-то текст в первом файле
+stdneprov@MacBook-Pro-Steve my_lab % cat > f2.txt
+Какой-то текст во втором файле
+^C
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f1.txt	f2.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat f2.txt 
+Какой-то текст во втором файле
+stdneprov@MacBook-Pro-Steve my_lab % cat f1.txt  
+Какой-то текст в первом файле
+stdneprov@MacBook-Pro-Steve my_lab % ls > f1.txt 
+stdneprov@MacBook-Pro-Steve my_lab % cat f1.txt 
+f1.txt
+f2.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat f2.txt 
+Какой-то текст во втором файле
+stdneprov@MacBook-Pro-Steve my_lab % ls >> f2.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat f2.txt  
+Какой-то текст во втором файле
+f1.txt
+f2.txt
+stdneprov@MacBook-Pro-Steve my_lab % touch f3.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f1.txt	f2.txt	f3.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat f3.txt 
+stdneprov@MacBook-Pro-Steve my_lab % rm *
+zsh: sure you want to delete all 3 files in /Users/stdneprov/my_lab [yn]? y
+stdneprov@MacBook-Pro-Steve my_lab % ls
+stdneprov@MacBook-Pro-Steve my_lab % mkdir folder1  
+stdneprov@MacBook-Pro-Steve my_lab % ls    
+folder1
+stdneprov@MacBook-Pro-Steve my_lab % mkdir folder2 folder3
+stdneprov@MacBook-Pro-Steve my_lab % ls
+folder1	folder2	folder3
+stdneprov@MacBook-Pro-Steve my_lab % touch folder2/file1.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls folder2
+file1.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls -l folder2
+total 0
+-rw-r--r--  1 stdneprov  staff  0 18 сен 09:02 file1.txt
+stdneprov@MacBook-Pro-Steve my_lab % chmod 664 folder2/file1.txt 
+stdneprov@MacBook-Pro-Steve my_lab % ls -l folder2              
+total 0
+-rw-rw-r--  1 stdneprov  staff  0 18 сен 09:02 file1.txt
+stdneprov@MacBook-Pro-Steve my_lab % rm folder1   
+rm: folder1: is a directory
+stdneprov@MacBook-Pro-Steve my_lab % rmdir folder1
+stdneprov@MacBook-Pro-Steve my_lab % ls
+folder2	folder3
+stdneprov@MacBook-Pro-Steve my_lab % rmdir folder2
+rmdir: folder2: Directory not empty
+stdneprov@MacBook-Pro-Steve my_lab % ls
+folder2	folder3
+stdneprov@MacBook-Pro-Steve my_lab % rm -r folder2
+stdneprov@MacBook-Pro-Steve my_lab % ls
+folder3
+stdneprov@MacBook-Pro-Steve my_lab % cd folder3 
+stdneprov@MacBook-Pro-Steve folder3 % pwd
+/Users/stdneprov/my_lab/folder3
+stdneprov@MacBook-Pro-Steve folder3 % cd ..
+stdneprov@MacBook-Pro-Steve my_lab % pwd
+/Users/stdneprov/my_lab
+stdneprov@MacBook-Pro-Steve my_lab % rm -r folder3
+stdneprov@MacBook-Pro-Steve my_lab % ls
+stdneprov@MacBook-Pro-Steve my_lab % touch f1.txt f2.txt f3.txt f4.txt f5.txt f6.txt f7.txt f8.txt f9.txt f10.txt f11.txt f12.txt f13.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f1.txt	f11.txt	f13.txt	f3.txt	f5.txt	f7.txt	f9.txt
+f10.txt	f12.txt	f2.txt	f4.txt	f6.txt	f8.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls | head -7
+f1.txt
+f10.txt
+f11.txt
+f12.txt
+f13.txt
+f2.txt
+f3.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls | sort   
+f1.txt
+f10.txt
+f11.txt
+f12.txt
+f13.txt
+f2.txt
+f3.txt
+f4.txt
+f5.txt
+f6.txt
+f7.txt
+f8.txt
+f9.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f1.txt	f11.txt	f13.txt	f3.txt	f5.txt	f7.txt	f9.txt
+f10.txt	f12.txt	f2.txt	f4.txt	f6.txt	f8.txt
+stdneprov@MacBook-Pro-Steve my_lab % rm f1*   
+stdneprov@MacBook-Pro-Steve my_lab % ls
+f2.txt	f3.txt	f4.txt	f5.txt	f6.txt	f7.txt	f8.txt	f9.txt
+stdneprov@MacBook-Pro-Steve my_lab % rm *
+zsh: sure you want to delete all 8 files in /Users/stdneprov/my_lab [yn]? y
+stdneprov@MacBook-Pro-Steve my_lab % ls
+stdneprov@MacBook-Pro-Steve my_lab % cat > students
+Петя
+Ваня
+Дима
+Вася
+^C
+stdneprov@MacBook-Pro-Steve my_lab % ls
+students
+stdneprov@MacBook-Pro-Steve my_lab % cat students
+Петя
+Ваня
+Дима
+Вася
+stdneprov@MacBook-Pro-Steve my_lab % mv students students.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls
+students.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat students.txt 
+Петя
+Ваня
+Дима
+Вася
+stdneprov@MacBook-Pro-Steve my_lab % sort students.txt 
+Ваня
+Вася
+Дима
+Петя
+stdneprov@MacBook-Pro-Steve my_lab % cat students.txt | sort
+Ваня
+Вася
+Дима
+Петя
+stdneprov@MacBook-Pro-Steve my_lab % grep "Петя" students.txt 
+Петя
+stdneprov@MacBook-Pro-Steve my_lab % grep "петя" students.txt
+stdneprov@MacBook-Pro-Steve my_lab % grep -i "петя" students.txt
+Петя
+stdneprov@MacBook-Pro-Steve my_lab % ls
+students.txt
+stdneprov@MacBook-Pro-Steve my_lab % who >> stats.txt && whoami >> stats.txt && ps >> stats.txt
+stdneprov@MacBook-Pro-Steve my_lab % ls
+stats.txt	students.txt
+stdneprov@MacBook-Pro-Steve my_lab % cat stats.txt 
+stdneprov console  Sep 13 08:33 
+stdneprov ttys000  Sep 18 08:55 
+stdneprov
+  PID TTY           TIME CMD
+60913 ttys000    0:00.39 -zsh
+51750 ttys002    0:00.24 /bin/zsh -il
+stdneprov@MacBook-Pro-Steve my_lab % cat > script.bash
+#!/bin/bash
+# Комментарий
+echo "Баш скрипт отработал"   
+^C
+stdneprov@MacBook-Pro-Steve my_lab % bash script.bash 
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab % ls   
+script.bash	stats.txt	students.txt
+stdneprov@MacBook-Pro-Steve my_lab % cp script.bash script.sh   
+stdneprov@MacBook-Pro-Steve my_lab % ls                      
+script.bash	script.sh	stats.txt	students.txt
+stdneprov@MacBook-Pro-Steve my_lab % bash script.sh          
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab % sh script.bash      
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab % sh script.sh  
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab % ls -l script*     
+-rw-r--r--  1 stdneprov  staff  83 18 сен 09:15 script.bash
+-rw-r--r--  1 stdneprov  staff  83 18 сен 09:16 script.sh
+stdneprov@MacBook-Pro-Steve my_lab % ./script.bash
+zsh: permission denied: ./script.bash
+stdneprov@MacBook-Pro-Steve my_lab % ./script.sh  
+zsh: permission denied: ./script.sh
+stdneprov@MacBook-Pro-Steve my_lab % chmod 740 script.bash
+stdneprov@MacBook-Pro-Steve my_lab % chmod 744 script.sh 
+stdneprov@MacBook-Pro-Steve my_lab % ls -l script*
+-rwxr-----  1 stdneprov  staff  83 18 сен 09:15 script.bash
+-rwxr--r--  1 stdneprov  staff  83 18 сен 09:16 script.sh
+stdneprov@MacBook-Pro-Steve my_lab % ./script.bash 
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab % ./script.sh  
+Баш скрипт отработал
+stdneprov@MacBook-Pro-Steve my_lab %            
